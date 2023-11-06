@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: kargo-demo
+spec:
+  host: HOST
+  path: /
+  to:
+    kind: Service
+    name: kargo-demo
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
