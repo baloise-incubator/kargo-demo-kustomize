@@ -6,10 +6,10 @@ resources:
 - configmap.yaml
 
 patches:
-- target:
-    kind: Service
-    name: kargo-demo
-  patch: |-
-    - op: replace
-      path: /spec/ports/0/nodePort
-      value: 30082
+  - target:
+      kind: Route
+      name: kargo-demo
+    patch: |-
+      - op: replace
+        path: /spec/host
+        value: kargo-demo-uat.apps.baloise.dev

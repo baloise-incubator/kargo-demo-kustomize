@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx 
-        image: nginx:placeholder
+        image: docker.io/niiku/kargo-demo-app:v0.1.0
         volumeMounts:
         - name: content
           mountPath: /usr/share/nginx/html
