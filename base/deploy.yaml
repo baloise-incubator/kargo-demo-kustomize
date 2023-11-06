@@ -19,6 +19,9 @@ spec:
         - name: content
           mountPath: /usr/share/nginx/html
           readOnly: true
+        env:
+          - name: DEBUG
+            value: "true"
       volumes:
       - name: content
         configMap:
