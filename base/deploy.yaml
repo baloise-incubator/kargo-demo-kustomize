@@ -20,8 +20,8 @@ spec:
           mountPath: /usr/share/nginx/html
           readOnly: true
         env:
-          - name: DEBUG
-            value: "true"
+          - name: LOG_LEVEL
+            value: "DEBUG"
       volumes:
       - name: content
         configMap:
