@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+- configmap.yaml
+
+patches:
+  - target:
+      kind: Route
+      name: kargo-demo
+    patch: |-
+      - op: replace
+        path: /spec/host
+        value: kargo-demo-test.apps.baloise.dev
